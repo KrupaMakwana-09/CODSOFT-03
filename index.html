@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple Professional Calculator</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="calculator-app">
+    
+    <div class="top-bar">
+        <h1>Smart Calc</h1>
+        <button onclick="toggleTheme()" class="theme-btn">🌓 Mode</button>
+    </div>
+
+    <div class="display-box">
+        <div id="equationDisplay"></div>
+        <div id="mainDisplay">0</div>
+    </div>
+
+    <div class="grid-container">
+        
+        <div class="keys">
+            <button onclick="clearAll()" class="btn-action">AC</button>
+            <button onclick="appendOperator('%')" class="btn-action">%</button>
+            <button onclick="backspace()" class="btn-action">⌫</button>
+            <button onclick="appendOperator('/')" class="btn-operator">÷</button>
+
+            <button onclick="appendNum('7')">7</button>
+            <button onclick="appendNum('8')">8</button>
+            <button onclick="appendNum('9')">9</button>
+            <button onclick="appendOperator('*')" class="btn-operator">×</button>
+
+            <button onclick="appendNum('4')">4</button>
+            <button onclick="appendNum('5')">5</button>
+            <button onclick="appendNum('6')">6</button>
+            <button onclick="appendOperator('-')" class="btn-operator">−</button>
+
+            <button onclick="appendNum('1')">1</button>
+            <button onclick="appendNum('2')">2</button>
+            <button onclick="appendNum('3')">3</button>
+            <button onclick="appendOperator('+')" class="btn-operator">+</button>
+
+            <button onclick="toggleSign()">±</button>
+            <button onclick="appendNum('0')">0</button>
+            <button onclick="appendDecimal()">.</button>
+            <button onclick="calculate()" class="btn-equal">=</button>
+        </div>
+
+        <div class="history-panel">
+            <div class="history-header">
+                <h2>History</h2>
+                <button onclick="clearHistory()" class="clear-history-btn">🗑 Clear</button>
+            </div>
+            <div id="historyList" class="custom-scrollbar"></div>
+            <p id="emptyHistoryMsg">No history yet</p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
