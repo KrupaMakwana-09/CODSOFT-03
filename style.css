@@ -10,7 +10,6 @@ body {
     min-height: min-content;
     height: 100vh;
     display: flex;
-    -ms-accelerator: center;
     justify-content: center;
     align-items: center;
     padding: 16px;
@@ -288,11 +287,13 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
     font-size: 15px;
     background: #ffffff;
     border: 1px solid #e4e4e7;
+    color: #09090b; /* Light Mode Text Color */
 }
 
 html.dark #historyList div {
     background: #18181b;
     border-color: #27272a;
+    color: #ffffff; /* Dark Mode Main Text Color */
 }
 
 #historyList div:hover {
@@ -301,6 +302,14 @@ html.dark #historyList div {
 
 html.dark #historyList div:hover {
     background: #27272a;
+}
+
+/* Dynamic custom styling for history equation texts */
+.history-item-expr {
+    color: #71717a;
+}
+html.dark .history-item-expr {
+    color: #a1a1aa; /* Dark mode sub-text readability fixed */
 }
 
 #emptyHistoryMsg {

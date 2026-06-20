@@ -132,7 +132,8 @@ function renderHistory() {
     history.forEach((h, i) => {
         const div = document.createElement("div");
         let niceExpr = h.expr.replace(/\*/g, "×").replace(/\//g, "÷");
-        div.innerHTML = `<span style="color: #71717a; font-size: 13px;">${niceExpr} =</span><br><strong>${h.res}</strong>`;
+        // Added 'history-item-expr' class for premium dark mode support
+        div.innerHTML = `<span class="history-item-expr" style="font-size: 13px;">${niceExpr} =</span><br><strong>${h.res}</strong>`;
         div.onclick = () => loadHistory(i);
         historyList.appendChild(div);
     });
@@ -149,6 +150,7 @@ function clearHistory() {
     history = [];
     localStorage.removeItem("history");
     renderHistory();
+    clearAll(); // Clears main display and resets to '0' instantly
 }
 
 function toggleTheme() {
